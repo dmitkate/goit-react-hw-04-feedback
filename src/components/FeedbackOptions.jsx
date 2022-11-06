@@ -1,13 +1,19 @@
 import React from 'react';
 
-export const FeedbackOptions = ({ onLeaveFeedback, options }) => {
+function FeedbackOptions({ onLeaveFeedback, options }) {
   return (
     <>
-      {options.map(option => (
-        <button type="button" onClick={onLeaveFeedback} data-action={option}>
+      {options.map((option, index) => (
+        <button
+          key={index}
+          type="button"
+          onClick={onLeaveFeedback}
+          data-action={option}
+        >
           {option}
         </button>
       ))}
     </>
   );
-};
+}
+export default FeedbackOptions;
